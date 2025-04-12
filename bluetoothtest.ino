@@ -1,5 +1,6 @@
 #include <SoftwareSerial.h>
 #include <avr/wdt.h>
+
 SoftwareSerial BTSerial(10, 11); // RXD, TXD
 const int trig = 5;
 const int echo = 6;

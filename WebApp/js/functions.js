@@ -49,7 +49,7 @@ function startVoiceNavigation() {
 // fetch longitude and latitude coordinates of detination name / address
 function fetchDestinationCoordinates(destinationName) {
   // Example fallback: default proximity near Purdue
-  const defaultProximity = '-86.9132,40.4237'; // set default proximity to current location
+  const defaultProximity = getLocation(); // set default proximity to current location
 
   navigator.geolocation.getCurrentPosition((position) => {
     const lng = position.coords.longitude;
