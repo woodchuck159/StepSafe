@@ -4,15 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Barebones Web App</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.11.0/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.11.0/mapbox-gl.js"></script>
+  <style>
+    body { margin: 0; padding: 0; }
+    #map {position: absolute; top: 0; bottom: 0; width: 100%; }
+  </style>
 </head>
 <body>
-  <div id="app">
-    <h1>Hello, Web!</h1>
-    <button id="clickMe">Click Me</button>
-    <p id="message"></p>
-  </div>
+  <div id="map"></div>
 
-  <script src="script.js"></script>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbmRvdmJ1c2giLCJhIjoiY205ZWhrOGp3MWUyejJtb2Rkazhrc295NyJ9.lCKS2G5IqLvr5yXktd3j9Q';
+      const map = new mapboxgl.Map({
+          container: 'map', // container ID
+          center: [-74.5, 40], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+          zoom: 9 // starting zoom
+      });
+  </script>
 </body>
 </html>
