@@ -6,3 +6,12 @@ const map = new mapboxgl.Map({
   zoom: 9,
   style: 'mapbox://styles/mapbox/streets-v11'
 });
+
+const nav = new mapboxgl.NavigationControl();
+map.addControl(nav);
+
+var directions = new MapboxDirections({
+    accessToken: mapboxgl.accessToken
+})
+
+map.addControl(directions, 'top-left')
