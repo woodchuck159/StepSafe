@@ -43,17 +43,35 @@ function startVoiceNavigation() {
   };
 }
 
-
-// helper to convert address to coordinates and route it
 function fetchDestinationCoordinates(destinationName) {
-  fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(destinationName)}.json?access_token=${mapboxgl.accessToken}`)
-  .then(rest => rest.json())
-  .then(data => {
-    if (data.features && data.features.length > 0) {
-      const [lng, lat] = data.features[0].center;
-      directions.setDestination([lng, lat]);
-    } else {
-      alert("Could not find the destinatino.");
-    }
+  // Example fallback: default proximity near Purdue
+  const defaultProximity = '-86.9132,40.4237';
+
+  navigator.geolocation.getCurrentPosition((position) => {
+    const lng = position.coords.longitude;
+    const lat = position.coords.latitude;
+    fetchGeocode(destinationName, `${lng},${lat}`);
+  }, () => {
+    // If geolocation fails, use fallback
+    fetchGeocode(destinationName, defaultProximity);
   });
+}
+
+function fetchGeocode(destinationName, proximity) {
+  const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(destinationName)}.json?access_token=${mapboxgl.accessToken}&proximity=${proximity}&types=poi&autocomplete=true`;
+
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.features && data.features.length > 0) {
+        const [lng, lat] = data.features[0].center;
+        directions.setDestination([lng, lat]);
+      } else {
+        alert("Could not find the destination.");
+      }
+    })
+    .catch((err) => {
+      console.error("Error fetching destination:", err);
+      alert("There was a problem finding that place.");
+    });
 }
