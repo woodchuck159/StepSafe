@@ -8,20 +8,31 @@ class MapRequest {
     "cycling": "mapbox/cylcing"
   };
 
+  #RoutingParameters;
+
+  #location = {
+  'longitude': null,
+  'latitude': null
+  };
+
   constructor() {
-
+    this.getMapLocation()
   }
 
-  buildURL() {
+  // buildURL(locationStr) {
   
-  }
+  // }
 
-  getLocation() {
-    position = navigator.geolocation.getCurrentPosition(this.getLocationSuccess);
+  getMapLocation() {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.getLocationSuccess(position)
+    });
   }
 
   getLocationSuccess(position) {
-    return position.coords;
+    this.#location['longitude'] = position.coords.longitude
+    this.#location['latitude'] = position.coords.latitude
+    console.log(`${this.#location['longitude']}, ${this.#location['latitude']}`)
   }
 
 
