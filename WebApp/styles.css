@@ -1,0 +1,24 @@
+#voice-button {
+    position: absolute;
+    top: 12px;
+    left: 320px;
+    z-index: 10;
+    padding: 8px;
+    background-color: #008cff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  #voice-button:hover {
+    background-color: #006fd6;
+  }  
