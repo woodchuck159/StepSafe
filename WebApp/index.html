@@ -15,15 +15,22 @@
     href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
   />
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="loading.css">
   <style>
     body { margin: 0; padding: 0; }
     #map {position: absolute; top: 0; bottom: 0; width: 100%; }
   </style>
 </head>
 <body>
+  <div class="intro">
+    <h1 class="logo-header">
+        <span class="logo">welc</span><span class="logo">ome!</span>
+    </h1>
+  </div>
+  <script src="app.js"></script>
   <div id="map"></div>
   <script src="js/script.js"></script>
-  <button onclick="startVoiceNavigation()" id="voice-button">
+  <button onclick="startVoiceNavigation()" id="voice-button" aria-label="Speak Destination">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
       <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 14 0h-2zm-5 9c1.657 0 3-1.343 3-3h-2a1 1 0 0 1-2 0h-2c0 1.657 1.343 3 3 3z"/>
     </svg>
