@@ -15,9 +15,9 @@ window.addEventListener('DOMContentLoaded', ()=> {
                 setTimeout(()=> {
                     span.classList.remove('active');
                     span.classList.add('fade');
-                }, (idx + 1) * 50)
+                }, (idx + 1) * 100)
             })
-        }, 2000);
+        }, 2600);
 
         setTimeout(()=>{
             intro.style.top = "-100vh";

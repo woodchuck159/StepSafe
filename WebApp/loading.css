@@ -35,3 +35,7 @@
     opacity: 0;
     transition: ease-in-out 0.5s;
   }
+
+  .space{
+    margin-right: 10px;
+  }
