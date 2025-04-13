@@ -2,9 +2,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbmRvdmJ1c2giLCJhIjoiY205ZWhrOGp3MWUyejJtb
 
 const map = new mapboxgl.Map({
   container: 'map',
-  center: getLocation(), // fallback location
-  zoom: 13,
-  style: 'mapbox://styles/mapbox/navigation-guidance-night-v4'
+  center: getLocation(), // fallback location (curent location of user)
+  zoom: 13, // increase zoom for short distance purposes
+  style: 'mapbox://styles/ivandovbush/cm9eymncl00da01qkah005by3'
 });
 
 const nav = new mapboxgl.NavigationControl();

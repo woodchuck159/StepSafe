@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
         logoSpan.forEach((span, idx) =>{
             setTimeout(()=>{
                 span.classList.add('active');
-            }, (idx + 1) * 400)
+            }, (idx + 1) * 500)
         });
 
         // set a timeout for the fade out of the spans (aka introductory words)
@@ -17,13 +17,13 @@ window.addEventListener('DOMContentLoaded', ()=> {
                 setTimeout(()=> {
                     span.classList.remove('active');
                     span.classList.add('fade');
-                }, (idx + 1) * 100)
+                }, (idx + 1) * 200)
             })
         }, 2600);
 
         // introduce nice fade-away of black screen
         setTimeout(()=>{
             intro.style.top = "-100vh";
-        }, 2300)
+        }, 2350)
     })
 })
