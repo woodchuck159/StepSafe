@@ -30,4 +30,4 @@ async function sendCommand(cmd) {
 }
 
 // export the functions
-export { connectToHM10, sendCommand };
+export { connectToHM10, sendCommand }
