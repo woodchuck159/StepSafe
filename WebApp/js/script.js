@@ -3,7 +3,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbmRvdmJ1c2giLCJhIjoiY205ZWhrOGp3MWUyejJtb
 const map = new mapboxgl.Map({
   container: 'map',
   center: getLocation(), // fallback location (curent location of user)
-  zoom: 13, // increase zoom for short distance purposes
+  zoom: 13.2, // increase zoom for short distance purposes
   style: 'mapbox://styles/ivandovbush/cm9eymncl00da01qkah005by3'
 });
 
@@ -22,9 +22,3 @@ navigator.geolocation.getCurrentPosition((pos) => {
     const origin = [pos.coords.longitude, pos.coords.latitude];
     directions.setOrigin(origin);
 });
-
-// start listening for voice after the map loads
-map.on('load', () => {
-    startVoiceNavigation(); // call voice listener function
-})
-

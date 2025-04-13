@@ -10,12 +10,14 @@
   <script src="./js/functions.js"></script>
   <script src="./js/MapRequest.js"></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+  <script type="module" src="js/bluetooth.js"></script>
   <link
     rel="stylesheet"
     href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
   />
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="loading.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     body { margin: 0; padding: 0; }
     #map {position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -34,6 +36,16 @@
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
       <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 14 0h-2zm-5 9c1.657 0 3-1.343 3-3h-2a1 1 0 0 1-2 0h-2c0 1.657 1.343 3 3 3z"/>
     </svg>
-  </button>  
+  </button>
+  
+  <div id="buttonContainer">
+    <button title="Connect">
+      <i class="fa fa-bluetooth" aria-hidden="true"></i>
+    </button>
+    <button id="onBtn" class="circular-button" title="Turn on">on</button>
+    <button id="offBtn" class="circular-button" title="Turn off">off</button>
+  </div>
+  
+  <script type="module" src="js/bluetooth-ui.js"></script>
 </body>
 </html>

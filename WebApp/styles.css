@@ -1,24 +1,114 @@
 #voice-button {
-    position: absolute;
-    top: 12px;
-    left: 320px;
-    z-index: 10;
-    padding: 8px;
-    background-color: #008cff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 18px;
-    cursor: pointer;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-  }
-  
-  #voice-button:hover {
-    background-color: #006fd6;
-  }  
+  position: absolute;
+  top: 12px;
+  left: 320px;
+  z-index: 10;
+  padding: 8px;
+  background-color: #008cff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#voice-button:hover {
+  background-color: #006fd6;
+}
+
+/* Bluetooth button styled like the voice button */
+#buttonContainer button {
+  padding: 8px;
+  font-size: 16px;
+  background-color: #008cff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the buttons */
+#buttonContainer button:hover {
+  background-color: #006fd6;
+}
+
+/* Font Awesome Bluetooth icon style */
+#buttonContainer .fa-bluetooth {
+  font-size: 20px; /* Adjust the icon size */
+  color: white;
+}
+
+/* On/Off buttons */
+#onBtn, #offBtn {
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #008cff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  margin: 10px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+} 
+
+#onBtn:hover, #offBtn:hover {
+  background-color: #008cff;
+  transform: scale(1.05);
+}
+
+#onBtn:active, #offBtn:active {
+  transform: scale(1);
+  background-color: #008cff;
+}
+
+#buttonContainer {
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 60px;
+  gap: 20px;
+  margin-top: 125px;
+}
+
+.circular-button {
+  margin-top: 10px;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 0;
+  background-color: #008cff;
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.circular-button:hover {
+  background-color: #006fd6;
+}
